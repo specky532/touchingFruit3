@@ -133,10 +133,10 @@ def setup(address):
 
 	# Section F
 	# Set auto configure
-	bus.write_byte_data(address, ATO_CFG0, 0x0B)
-	bus.write_byte_data(address, ATO_CFGU, 0x9C)
-	bus.write_byte_data(address, ATO_CFGL, 0x65)
-	bus.write_byte_data(address, ATO_CFGT, 0x8C)
+	#bus.write_byte_data(address, ATO_CFG0, 0x0B)
+	#bus.write_byte_data(address, ATO_CFGU, 0x9C)
+	#bus.write_byte_data(address, ATO_CFGL, 0x65)
+	#bus.write_byte_data(address, ATO_CFGT, 0x8C)
 
 
 	# Section E
