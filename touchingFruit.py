@@ -98,7 +98,7 @@ madeonMode = 2
 
 madeonMode = int(raw_input("Do you want to run in Madeon Mode? 1 = Yes, 0 = No"))
 
-while madeonMode != 0 and != 1: #Checks user has given correct input
+while madeonMode != 0 and madeonMode != 1: #Checks user has given correct input
         print "Please enter a 1 or 0"
         madeonMode = int(raw_input("Do you want to run in Madeon Mode? 1 = Yes, 0 = No"))
 
@@ -118,16 +118,16 @@ while interrupted == False:
                                 if (touchData & (1<<i)):
                                         if (touches[i] == 0):
                                                 print( 'Pin ' + str(i) + ' was just touched') #Track changes and give feedback to user
-                                                        if madeonMode == 0:
-                                                                if touches[0] == 1: #Check if sample switch is being touched, if so play from piano samples
-                                                                    piano[i].play()
-                                                                    print 'Piano Mode'
-                                                                else:
-                                                                    drumKit[i].play()
-                                                                    print 'Drum Mode'
-                                                        else:
-                                                                madeon[i].play()
-                                        touches[i] = 1;
+						if madeonMode == 0:
+							if touches[0] == 1: #Check if sample switch is being touched, if so play from piano samples
+								piano[i].play()
+								print 'Piano Mode'
+							else:
+								drumKit[i].play()
+								print 'Drum Mode'
+						else:
+							madeon[i].play()
+						touches[i] = 1;
                                 else:
                                         if (touches[i] == 1): #Check if pin has been released
                                                 print( 'Pin ' + str(i) + ' was just released')
