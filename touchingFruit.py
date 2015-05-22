@@ -69,6 +69,39 @@ piano.append(piano7)
 for sample in piano:
     sample.set_volume(.65)
 
+#Define Sounds for Madeon Samples
+madeon = []
+
+madeon0 = pygame.mixer.Sound('samples/madeon/m0.wav')
+madeon1 = pygame.mixer.Sound('samples/madeon/m1.wav')
+madeon2 = pygame.mixer.Sound('samples/madeon/m2.wav')
+madeon3 = pygame.mixer.Sound('samples/madeon/m3.wav')
+madeon4 = pygame.mixer.Sound('samples/madeon/m4.wav')
+madeon5 = pygame.mixer.Sound('samples/madeon/m5.wav')
+madeon6 = pygame.mixer.Sound('samples/madeon/m6.wav')
+madeon7 = pygame.mixer.Sound('samples/madeon/m7.wav')
+
+#Add sounds to list
+madeon.append(madeon1)
+madeon.append(madeon1)
+madeon.append(madeon2)
+madeon.append(madeon3)
+madeon.append(madeon4)
+madeon.append(madeon5)
+madeon.append(madeon6)
+madeon.append(madeon7)
+
+for sample in madeon:
+    sample.set_volume(.65)
+
+madeonMode = 2
+
+madeonMode = int(raw_input("Do you want to run in Madeon Mode? 1 = Yes, 0 = No"))
+
+while madeonMode != 0 and != 1: #Checks user has given correct input
+        print "Please enter a 1 or 0"
+        madeonMode = int(raw_input("Do you want to run in Madeon Mode? 1 = Yes, 0 = No"))
+
 # Track touches
 touches = [0,0,0,0,0,0,0,0];
 interrupted = False
@@ -85,12 +118,15 @@ while interrupted == False:
                                 if (touchData & (1<<i)):
                                         if (touches[i] == 0):
                                                 print( 'Pin ' + str(i) + ' was just touched') #Track changes and give feedback to user
-                                                if touches[0] == 1: #Check if sample switch is being touched, if so play from piano samples
-                                                    piano[i].play()
-                                                    print 'Piano Mode'
-                                                else:
-                                                    drumKit[i].play()
-                                                    print 'Drum Mode'
+                                                        if madeonMode == 0:
+                                                                if touches[0] == 1: #Check if sample switch is being touched, if so play from piano samples
+                                                                    piano[i].play()
+                                                                    print 'Piano Mode'
+                                                                else:
+                                                                    drumKit[i].play()
+                                                                    print 'Drum Mode'
+                                                        else:
+                                                                madeon[i].play()
                                         touches[i] = 1;
                                 else:
                                         if (touches[i] == 1): #Check if pin has been released
