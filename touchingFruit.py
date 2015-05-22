@@ -100,7 +100,12 @@ madeonMode = int(raw_input("Do you want to run in Madeon Mode? 1 = Yes, 0 = No")
 
 while madeonMode != 0 and madeonMode != 1: #Checks user has given correct input
         print "Please enter a 1 or 0"
-        madeonMode = int(raw_input("Do you want to run in Madeon Mode? 1 = Yes, 0 = No"))
+        madeonMode = int(raw_input("Do you want to run in Madeon Mode? 1 = Yes, 0 = No"   ))
+
+if madeonMode == 1:
+    print "Madeon Mode Selected"
+else:
+    print "Normal Mode Selected"
 
 # Track touches
 touches = [0,0,0,0,0,0,0,0];
