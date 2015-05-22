@@ -30,7 +30,7 @@ drumKit6 = pygame.mixer.Sound('samples/drumKit/d6.wav')
 drumKit7 = pygame.mixer.Sound('samples/drumKit/d7.wav')
 
 #Add sounds to list
-drumKit.append(drumKit1)
+drumKit.append(drumKit0)
 drumKit.append(drumKit1)
 drumKit.append(drumKit2)
 drumKit.append(drumKit3)
@@ -82,7 +82,7 @@ madeon6 = pygame.mixer.Sound('samples/madeon/m6.wav')
 madeon7 = pygame.mixer.Sound('samples/madeon/m7.wav')
 
 #Add sounds to list
-madeon.append(madeon1)
+madeon.append(madeon0)
 madeon.append(madeon1)
 madeon.append(madeon2)
 madeon.append(madeon3)
